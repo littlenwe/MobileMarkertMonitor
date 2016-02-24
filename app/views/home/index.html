@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<div class="container">
+	<h3> Please Enter your URL </h3>
+	<input id="txt_url" type="text" style="width:400px" value=""/>
+	<button type="button" id="btn_shorten"> Shorten URL </button>
+</div>
+<div>
+</div>
+</body>
+</html>
+<script>
+$( document ).ready(function() {
+    $('#btn_shorten').on('click',function(){
+    	var url = $('#txt_url').val();
+    	$.ajax({
+    		type:'post',
+    		url:'<%= api_v1_convert_url_path %>',
+    		data:'url='+url,
+    		success:function(data){
+    			
+                
+    		}
+    	})
+    })
+});
+</script>
